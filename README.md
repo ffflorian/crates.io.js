@@ -15,10 +15,28 @@ Run `yarn add crates.io` or `npm install crates.io`.
 ```ts
 import {CratesIO} from 'crates.io';
 
-const cratesIO = new CratesIO('my-api-key');
+const cratesIO = new CratesIO();
+
+cratesIO
+  .summary()
+  .then(data => {
+    ...
+  });
+
+cratesIO
+  .api.crates.getAuthors('ripgrep', '0.10.0')
+  .then(data => {
+    ...
+  });
+
+cratesIO
+  .api.crates.getCrates('http', {per_page: 10})
+  .then(data => {
+    console.log(data);
+  });
 ```
 
-## Build and test
+## Build
 
 ```
 yarn

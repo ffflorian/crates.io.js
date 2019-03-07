@@ -7,6 +7,6 @@ export interface Dependency {
   kind: 'build' | 'normal' | 'dev';
   optional: boolean;
   req: string;
-  target: any | null;
+  target: string | null;
   version_id: number;
 }

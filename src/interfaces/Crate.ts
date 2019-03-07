@@ -1,5 +1,5 @@
 export interface Crate {
-  badges: any | null;
+  badges: string[] | null;
   categories: string | null;
   created_at: string;
   description: string;

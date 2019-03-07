@@ -22,15 +22,6 @@ export class CratesAPI {
   }
 
   /**
-   * Retrieve a download link for a certain version of a crate.
-   * @param packageName The package name
-   */
-  public downloadVersion(packageName: string, version: string): Promise<UrlResult> {
-    const endpoint = Endpoint.Crates.download(packageName, version);
-    return this.requestService.get(endpoint);
-  }
-
-  /**
    * Retrieve the owners of a crate.
    * @param packageName The package name
    */
@@ -59,11 +50,11 @@ export class CratesAPI {
   }
 
   /**
-   * Retrieve the reverse dependencies of a crate version.
+   * Retrieve a download link for a certain version of a crate.
    * @param packageName The package name
    */
-  public getReverseDependencies(packageName: string): Promise<ReverseDependenciesResult> {
-    const endpoint = Endpoint.Crates.dependants(packageName);
+  public getDownloadUrl(packageName: string, version: string): Promise<UrlResult> {
+    const endpoint = Endpoint.Crates.download(packageName, version);
     return this.requestService.get(endpoint);
   }
 
@@ -91,6 +82,15 @@ export class CratesAPI {
    */
   public getOwners(packageName: string): Promise<UsersResult> {
     const endpoint = Endpoint.Crates.owners(packageName);
+    return this.requestService.get(endpoint);
+  }
+
+  /**
+   * Retrieve the reverse dependencies of a crate version.
+   * @param packageName The package name
+   */
+  public getReverseDependencies(packageName: string): Promise<ReverseDependenciesResult> {
+    const endpoint = Endpoint.Crates.dependants(packageName);
     return this.requestService.get(endpoint);
   }
 
