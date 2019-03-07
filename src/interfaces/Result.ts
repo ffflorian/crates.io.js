@@ -39,7 +39,7 @@ export interface SearchResult {
   crates: Crate[];
   meta: {
     total: number;
-  }
+  };
 }
 
 export interface UrlResult {

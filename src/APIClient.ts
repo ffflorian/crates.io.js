@@ -1,7 +1,7 @@
 import {CratesAPI} from './api/';
+import {Endpoint} from './Endpoints';
 import {API, ClientOptions, Summary} from './interfaces/';
 import {RequestService} from './RequestService';
-import {Endpoint} from './Endpoints';
 
 export class CratesIO {
   private readonly requestService: RequestService;

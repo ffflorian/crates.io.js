@@ -2,8 +2,8 @@ import {Endpoint} from '../Endpoints';
 import {
   AuthorsResult,
   CrateResult,
-  DownloadsResult,
   DependenciesResult,
+  DownloadsResult,
   ReverseDependenciesResult,
   SearchOptions,
   SearchResult,
