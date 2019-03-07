@@ -32,7 +32,7 @@ cratesIO
 cratesIO
   .api.crates.getCrates('http', {per_page: 10})
   .then(data => {
-    console.log(data);
+    ...
   });
 ```
 
