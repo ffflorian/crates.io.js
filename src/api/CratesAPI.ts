@@ -4,6 +4,7 @@ import {
   CrateResult,
   DependenciesResult,
   DownloadsResult,
+  FollowingResult,
   ReverseDependenciesResult,
   SearchOptions,
   SearchResult,
@@ -19,6 +20,15 @@ export class CratesAPI {
 
   constructor(requestService: RequestService) {
     this.requestService = requestService;
+  }
+
+  /**
+   * Retrieve the owners of a crate.
+   * @param packageName The package name
+   */
+  public following(packageName: string): Promise<FollowingResult> {
+    const endpoint = Endpoint.Crates.following(packageName);
+    return this.requestService.get(endpoint);
   }
 
   /**

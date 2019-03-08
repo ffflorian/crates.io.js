@@ -4,6 +4,7 @@ export namespace Endpoint {
   const DEPENDENCIES = 'dependencies';
   const DOWNLOAD = 'download';
   const DOWNLOADS = 'downloads';
+  const FOLLOWING = 'following';
   const OWNERS = 'owners';
   const OWNER_TEAM = 'owner_team';
   const OWNER_USER = 'owner_user';
@@ -40,6 +41,10 @@ export namespace Endpoint {
 
     export function downloads(packageName: string): string {
       return `/${CRATES}/${encode(packageName)}/${DOWNLOADS}`;
+    }
+
+    export function following(packageName: string): string {
+      return `/${CRATES}/${encode(packageName)}/${FOLLOWING}`;
     }
 
     export function owners(packageName: string): string {

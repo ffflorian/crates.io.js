@@ -17,6 +17,6 @@ export interface SearchOptions {
 }
 
 export interface RequestOptions extends SearchOptions {
-  apiKey?: string;
   query?: string;
+  token?: string;
 }

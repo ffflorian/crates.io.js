@@ -27,17 +27,17 @@ export class RequestService {
   }
 
   private async request<T>(method: 'get', endpoint: string, parameters?: RequestOptions): Promise<T> {
-    const params: RequestOptions = parameters || {};
-
-    if (this.apiKey) {
-      params.apiKey = this.apiKey;
-    }
-
     const config: AxiosRequestConfig = {
       method,
-      params,
+      params: parameters,
       url: this.apiUrl + endpoint,
     };
+
+    if (this.apiKey) {
+      config.headers = {
+        Authorization: this.apiKey,
+      };
+    }
 
     try {
       const {data, headers, status} = await axios.request<T>(config);

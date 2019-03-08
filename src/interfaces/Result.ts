@@ -1,17 +1,16 @@
 import {Category, Crate, Dependency, Download, Keyword, Team, User, Version} from '.';
 
+export interface AuthorsResult {
+  meta: {
+    names: string[];
+  };
+  users: string[];
+}
+
 export interface CrateResult {
   categories: Category[];
   crate: Crate;
   keywords: Keyword[];
-}
-
-export interface VersionsResult {
-  versions: Version[];
-}
-
-export interface VersionResult {
-  version: Version;
 }
 
 export interface DependenciesResult {
@@ -22,11 +21,8 @@ export interface DownloadsResult {
   version_downloads: Download[];
 }
 
-export interface AuthorsResult {
-  meta: {
-    names: string[];
-  };
-  users: string[];
+export interface FollowingResult {
+  following: boolean;
 }
 
 export interface ReverseDependenciesResult extends DependenciesResult, VersionResult {
@@ -52,4 +48,12 @@ export interface UsersResult {
 
 export interface TeamsResult {
   teams: Team[];
+}
+
+export interface VersionsResult {
+  versions: Version[];
+}
+
+export interface VersionResult {
+  version: Version;
 }

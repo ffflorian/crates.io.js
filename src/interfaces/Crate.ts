@@ -1,5 +1,9 @@
 export interface Crate {
-  badges: string[] | null;
+  badges: {
+    [key: string]: {
+      [key: string]: string;
+    };
+  } | null;
   categories: string | null;
   created_at: string;
   description: string;
